@@ -3,10 +3,6 @@ project:
 
 website:
   title: "Python 自主的勉強会"
-  navbar:
-    left:
-      - href: index.qmd
-        text: ホーム
 
 format:
   html:
