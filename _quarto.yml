@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "Python 自主的勉強会"
+  navbar:
+    left:
+      - href: index.qmd
+        text: ホーム
+      - compile_and_interpreter.qmd
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+    number-sections: true

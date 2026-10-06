@@ -1,0 +1,14 @@
+---
+title: "Python 自主的勉強会"
+author: "Yusuke Nobe"
+date: today
+---
+
+Python勉強の過程をメモとして残す。
+
+各内容については以下のurlを参考にされたい。
+
+| 勉強会 | url |
+|:---|:---|
+|第1回|<a href = compile_and_interpreter.html>プログラミング言語の分類</a>|
+||<a href = basic_syntax.html>Pythonの基本構文</a>|
