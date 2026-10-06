@@ -7,8 +7,6 @@ website:
     left:
       - href: index.qmd
         text: ホーム
-      - compile_and_interpreter.qmd
-      - about.qmd
 
 format:
   html:
