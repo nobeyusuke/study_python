@@ -1,8 +1,16 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Python 自主的勉強会"
+  navbar:
+    left:
+      - href: index.qmd
+        text: ホーム
+      - compile_and_interpreter.qmd
+      - basic_syntax.qmd
+      - about.qmd
 
 format:
   html:
