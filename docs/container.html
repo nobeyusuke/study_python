@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="1" class="anchored" data-anchor-id="イントロダクション"><span class="header-section-number">1</span> イントロダクション</h2>
 <p><a href="basic_syntax.html">Pythonの基本構文</a>の第4節で変数について学んだ。 変数とは文字列や整数・小数などを代入できる、非常に便利な道具だと学んだが、実はこれだけでは不便なこともある。</p>
 <p>例えば主要5科目（国・数・社・理・英）の点数を変数に代入し、合計点 (<code>total_score</code>) ・平均点 (<code>avarage_score</code>) を計算したいとしよう。 このとき、今までの知識では以下のようなコードを実行することになる。</p>
-<div id="f1030ea4" class="cell" data-execution_count="1">
+<div id="cc849e55" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>jap <span class="op">=</span> <span class="dv">60</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mat <span class="op">=</span> <span class="dv">77</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sor <span class="op">=</span> <span class="dv">76</span></span>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="リスト" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="リスト"><span class="header-section-number">2</span> リスト</h2>
 <p>リストでは<code>[]</code>の中に格納したい要素を<code>,</code>区切りで記述していく。 と、言われても意味が分からないため、実際に先の5科目の点数をリストの中に入れてみよう。 リストを代入する変数名は<code>score</code>にする。</p>
-<div id="095cb29f" class="cell" data-execution_count="2">
+<div id="bbaacd7e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -247,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>なお、リストの中には数値のほか、文字列（文字も含む）も格納できる。</p>
-<div id="c1d628ed" class="cell" data-execution_count="3">
+<div id="2db1f5eb" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>subject <span class="op">=</span> [<span class="st">"国語"</span>, <span class="st">"数学"</span>, <span class="st">"社会"</span>, <span class="st">"理科"</span>, <span class="st">"英語"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(subject)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>さらに、整数・小数・文字列など型が違っていても同じリストに格納できる。</p>
-<div id="50d112d8" class="cell" data-execution_count="4">
+<div id="5d004c59" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mylist <span class="op">=</span> [<span class="st">"Hello"</span>, <span class="dv">5</span>, <span class="st">'あ'</span>, <span class="fl">1.41421356</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mylist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -265,19 +265,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="リストの要素を参照" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="リストの要素を参照"><span class="header-section-number">2.1</span> リストの要素を参照</h3>
 <p>リストに格納されている要素を参照したいときには以下のようなコードを用いる。</p>
-<div id="14c0c92c" class="cell" data-execution_count="5">
+<div id="43a1d7fe" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_score <span class="op">=</span> [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">20</span>, <span class="dv">60</span>, <span class="dv">40</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>math <span class="op">=</span> my_score[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>ここで注意すべきことは、<code>my_socre[1]</code>によって<code>math</code>に代入された数値が80ではなく90であるという点である。 実際に<code>math</code>に代入されている数値を確認してみよう。</p>
-<div id="3ba038d9" class="cell" data-execution_count="6">
+<div id="4db34e3e" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>90</code></pre>
 </div>
 </div>
 <p><code>my_score</code>の80を参照したい場合には次のようにする。</p>
-<div id="51f1c09b" class="cell" data-execution_count="7">
+<div id="42a84a33" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>japanese <span class="op">=</span> my_score[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>このように、インデックスが<strong>0から始まる</strong>という点はリストを扱う上で最も注意しなければならない。</p>
@@ -285,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="リストの合計と平均の計算" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="リストの合計と平均の計算"><span class="header-section-number">2.2</span> リストの合計と平均の計算</h3>
 <p>ここまででリストへの格納方法、参照方法が分かった。 では第1節のように主要5科目の合計点・平均点を計算したいとき、どのようにすべきだろうか。 思いつくコードは次のようなものである。</p>
-<div id="1c813a89" class="cell" data-execution_count="8">
+<div id="60f329bc" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>total_score <span class="op">=</span> score[<span class="dv">0</span>] <span class="op">+</span> score[<span class="dv">1</span>] <span class="op">+</span> score[<span class="dv">2</span>] <span class="op">+</span> score[<span class="dv">3</span>] <span class="op">+</span> score[<span class="dv">4</span>]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>avarage_score <span class="op">=</span> total_score <span class="op">/</span> <span class="dv">5</span></span>
@@ -298,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>jap</code>から<code>eng</code>までの変数を作成しなくて良くなったため、少し楽になった。</p>
 <p>しかし2行目の<code>total_score</code>の計算はまだまだ面倒である。 第1節でも指摘した学年全員の合計点・平均点を計算する場合には、合計点の計算だけで膨大な量のタイピングをしなければならなくなってしまう。</p>
 <p>これを回避するためにPythonには<code>sum()</code>関数というものが用意されている。 これはリスト内のすべての要素の合計を計算する関数で、以下のように用いる。</p>
-<div id="19d7cb73" class="cell" data-execution_count="9">
+<div id="6a412f72" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>total_score <span class="op">=</span> <span class="bu">sum</span>(score)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><code>sum()</code>関数を用いると、第1節のコードは次のようになる。</p>
-<div id="43dc7bb9" class="cell" data-execution_count="10">
+<div id="d6c956ee" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>total_score <span class="op">=</span> <span class="bu">sum</span>(score)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>avarage_score <span class="op">=</span> total_score <span class="op">/</span> <span class="dv">5</span></span>
@@ -320,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>記述量が少ない、極めて楽なコードになった。 ただ最後にもう一つ、<code>len()</code>関数というものについて学んでおく。</p>
 <p><code>len()</code>関数とはリスト内の要素の個数を数えてくれる便利な関数である。 これを使うことで、リストの要素の個数が増減したとき、コードの修正量を減らせられる。 また、リストの要素の個数を数え間違えるという凡ミスを完全に無にできるというメリットもある。</p>
 <p>使い方は次の通り。</p>
-<div id="6f76c2ae" class="cell" data-execution_count="11">
+<div id="f4ba5733" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>my_score <span class="op">=</span> [<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">20</span>, <span class="dv">60</span>, <span class="dv">40</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>count_myscore <span class="op">=</span> <span class="bu">len</span>(my_score)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_myscore)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>主要5科目の合計点・平均点を計算したいときには、以下のような使い方をする。</p>
-<div id="ff064a58" class="cell" data-execution_count="12">
+<div id="5b1146f5" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>total_score <span class="op">=</span> <span class="bu">sum</span>(score)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>avarage_score <span class="op">=</span> total_score <span class="op">/</span> <span class="bu">len</span>(score)</span>
@@ -345,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="2.3" class="anchored" data-anchor-id="リストの修正"><span class="header-section-number">2.3</span> リストの修正</h3>
 <p>2.2節の最後の話で出てきたように、プログラムを組んでいるとリストに新しい数値を追加したいときがある。</p>
 <p>例えば主要5科目に家庭科の点数<code>65</code>を追加したいとしよう。 このとき</p>
-<div id="409edde4" class="cell" data-execution_count="13">
+<div id="f98e5f40" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>, <span class="dv">65</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -354,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="リスト要素の追加" class="level4" data-number="2.3.1">
 <h4 data-number="2.3.1" class="anchored" data-anchor-id="リスト要素の追加"><span class="header-section-number">2.3.1</span> リスト要素の追加</h4>
 <p>冒頭の話のように、リストに要素を追加したいときには<code>append()</code>関数というものを使う。 これは引数に与えた数値や文字列をリストに追加するという機能を持ち、次のような使い方をする。</p>
-<div id="29ca0533" class="cell" data-execution_count="14">
+<div id="7892752e" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>]</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>score.append(<span class="dv">65</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -366,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="リスト要素の削除" class="level4" data-number="2.3.2">
 <h4 data-number="2.3.2" class="anchored" data-anchor-id="リスト要素の削除"><span class="header-section-number">2.3.2</span> リスト要素の削除</h4>
 <p>反対に、リストの要素を削除したいときには<code>remove()</code>関数というものを使う。 これは引数に与えた数値や文字列をリストから削除するという機能を持ち、次のような使い方をする。</p>
-<div id="3248bf96" class="cell" data-execution_count="15">
+<div id="fefd47d0" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">77</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">25</span>, <span class="dv">65</span>]</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>score.remove(<span class="dv">65</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>これまではリストを作成し、そのリストに要素を格納する方法について学んできた。 しかしプログラムを組んでいると、空のリストを作りたいという感情になることがある。</p>
 <p>よって最後に空のリストの作り方について学んでおく。</p>
 <p>空のリストは<code>list()</code>と記述するだけで作成できる。 つまり、</p>
-<div id="b8709bfc" class="cell" data-execution_count="16">
+<div id="be2498fd" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>empty <span class="op">=</span> <span class="bu">list</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>というコードを実行することで、変数<code>empty</code>には空のリストが代入されることになる。</p>

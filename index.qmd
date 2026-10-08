@@ -13,3 +13,4 @@ Python勉強の過程をメモとして残す。
 |第1回|<a href = compile_and_interpreter.html>プログラミング言語の分類</a>|
 ||<a href = basic_syntax.html>Pythonの基本構文</a>|
 ||<a href = container.html>コンテナ</a>|
+|第2回|<a href = if.html>条件分岐</a>|
