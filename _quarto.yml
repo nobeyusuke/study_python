@@ -10,6 +10,8 @@ website:
         text: ホーム
       - compile_and_interpreter.qmd
       - basic_syntax.qmd
+      - container.qmd
+      - if.qmd
       - about.qmd
 
 format:

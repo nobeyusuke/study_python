@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yusuke Nobe">
+<meta name="dcterms.date" content="2026-10-08">
 
-<title>About – Python 自主的勉強会</title>
+<title>条件分岐 – Python 自主的勉強会</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -109,11 +146,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">リスト</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./if.html"> 
+    <a class="nav-link active" href="./if.html" aria-current="page"> 
 <span class="menu-text">条件分岐</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -127,22 +164,47 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#イントロダクション" id="toc-イントロダクション" class="nav-link active" data-scroll-target="#イントロダクション"><span class="header-section-number">1</span> イントロダクション</a></li>
+  <li><a href="#if文" id="toc-if文" class="nav-link" data-scroll-target="#if文"><span class="header-section-number">2</span> <code>if</code>文</a>
+  <ul class="collapse">
+  <li><a href="#インデントの重要性" id="toc-インデントの重要性" class="nav-link" data-scroll-target="#インデントの重要性"><span class="header-section-number">2.1</span> インデントの重要性</a></li>
+  <li><a href="#関係演算子" id="toc-関係演算子" class="nav-link" data-scroll-target="#関係演算子"><span class="header-section-number">2.2</span> 関係演算子</a></li>
+  <li><a href="#論理演算子" id="toc-論理演算子" class="nav-link" data-scroll-target="#論理演算子"><span class="header-section-number">2.3</span> 論理演算子</a></li>
+  </ul></li>
+  <li><a href="#if-elif文" id="toc-if-elif文" class="nav-link" data-scroll-target="#if-elif文"><span class="header-section-number">3</span> <code>if-elif</code>文</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">条件分岐</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yusuke Nobe </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 8, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -152,9 +214,173 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>About this site</p>
+<section id="イントロダクション" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="イントロダクション"><span class="header-section-number">1</span> イントロダクション</h2>
+<p>試験の合格条件には絶対的な点数として定まっているものと周りの点数と比較して定まるものとがある。</p>
+<p>ここで仮に「100点満点中60点以上だと合格」という試験に受験するとする。 このとき、</p>
+<pre><code>もし、試験の点数が60点以上なら・・・
+    → 試験結果: 合格
+そうでなければ・・・
+    → 試験結果: 不合格</code></pre>
+<p>が成り立つ。</p>
+<p>プログラムの世界でも同様に、条件によって異なる結果を実行させることが往々にしてある。 本節ではそんな<strong>条件分岐</strong>について学んでいこう。</p>
+</section>
+<section id="if文" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="if文"><span class="header-section-number">2</span> <code>if</code>文</h2>
+<p>プログラミングの世界において、最も基本的かつ最も重要な条件分岐文は<code>if</code>文である。 ifの意味は皆さまご存じ「もし」であり、<code>if</code>文では<code>if</code>のうしろに条件を書く。</p>
+<p>例えば「試験の点数 (<code>score</code>) が60点以上」という条件を書きたいときには、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>): <span class="co"># ()は無くても良い</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>と書く。</p>
+<p>つづいて<code>if (条件):</code>の下に条件を満たす場合に実行したいことを書く。 「試験結果: 合格」という文字列を出力したければ、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>と書けばよい。</p>
+<p>条件を満たさない場合に実行したいことがあれば、さらに下に<code>else:</code>を書き、その下に実行したいことを書く。 「試験結果: 不合格」という文字列を出力したければ、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>: </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 不合格"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>と書けばよい。</p>
+<section id="インデントの重要性" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="インデントの重要性"><span class="header-section-number">2.1</span> インデントの重要性</h3>
+<p>「条件を満たす場合に実行したいことは<code>if (条件)</code>の下に書く」と説明したが、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>だと条件分岐はできない。 正解のコードは、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>であり、両コードの違いは<code>print("試験結果: 合格")</code>の前の字下げ（インデント）にある。</p>
+<p>Pythonではインデントが<strong>ブロック</strong>の意味を果たすことになる。 例えば、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>だと2行目の<code>print("試験結果: 合格")</code>の前のインデントが「ifブロック」の意味を果たすことになり、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 不合格"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>だと2行目の<code>print("試験結果: 合格")</code>の前のインデントが「ifブロック」、4行目の<code>print("試験結果: 不合格")</code>の前のインデントが「elseブロック」の意味を果たすことになる。</p>
+<p>難しいことはともかくとして、「Pythonで複数行のコードを書くときはインデントに気をつける」と覚えておこう。</p>
+</section>
+<section id="関係演算子" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="関係演算子"><span class="header-section-number">2.2</span> 関係演算子</h3>
+<p>第2節冒頭で「試験の結果 (<code>score</code>) が60点以上」という条件を書くとき、<code>score &gt;= 60</code>と書いた。 このコードに含まれる<code>&gt;=</code>は<strong>関係演算子</strong>というものの一種であり、「左辺は右辺より大きいか等しい」という意味を持つ。</p>
+<p>その他、関係演算子には以下のようなものがある。 いずれの関係演算子もよく使われるため、すべて覚えておきたい。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>関係演算子</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>左辺と右辺は等しい</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>左辺と右辺は等しくない</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>左辺は右辺より大きい</td>
+</tr>
+<tr class="even">
+<td><code>&gt;=</code></td>
+<td>左辺は右辺より大きいか等しい（左辺は右辺以上）</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td>左辺は右辺より小さい</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>左辺は右辺より小さいか等しい（左辺は右辺以下）</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="論理演算子" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="論理演算子"><span class="header-section-number">2.3</span> 論理演算子</h3>
+<p>資格の中には科目が複数種類あり、そのすべてである程度の点数を取らなければならないというものもある。</p>
+<p>たとえば資格Xに科目Aと科目Bがあり、「科目Aと科目Bの両方で1000点満点中600点以上」という合格条件があったとする。 このとき、</p>
+<pre><code>もし、科目Aが600点以上かつ科目Bも600点以上なら・・・
+    → 試験結果: 合格
+そうでなければ・・・
+    → 試験結果: 不合格</code></pre>
+<p>が成り立つ。</p>
+<p>これをプログラムで成立させるとき、<code>and</code>という<strong>論理演算子</strong>を用いることになる。 <code>and</code>は「かつ」を意味し、以下のように用いる。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (A <span class="op">&gt;=</span> <span class="dv">600</span> <span class="kw">and</span> B <span class="op">&gt;=</span> <span class="dv">600</span>):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 不合格"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>その他、論理演算子には以下のようなものがある。 関係演算子と同様、いずれもよく使われるためすべて覚えておきたい。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>論理演算子</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>and</code></td>
+<td>かつ</td>
+</tr>
+<tr class="even">
+<td><code>or</code></td>
+<td>または</td>
+</tr>
+<tr class="odd">
+<td><code>not</code></td>
+<td>でなければ</td>
+</tr>
+</tbody>
+</table>
+<p><code>not</code>の使い方だけ追加で学んでおこう。 第1節の資格の話を逆転して考えてみると、</p>
+<pre><code>もし、資格の点数が60点未満でなければ・・・
+    → 試験結果: 合格
+そうでなければ・・・
+    → 試験結果: 不合格</code></pre>
+<p>が成り立つ。これは<code>not</code>を用いれば、</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">not</span> (score <span class="op">&lt;</span> <span class="dv">60</span>)):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 合格"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"試験結果: 不合格"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>と表すことができる。</p>
+</section>
+</section>
+<section id="if-elif文" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="if-elif文"><span class="header-section-number">3</span> <code>if-elif</code>文</h2>
+<p>大学の授業では「合格（単位取得）・不合格（落単）」以外に「AA」や「A」などの評価が与えられる。</p>
+<p>仮にこれらの評価がテストの点数に基づいて与えられる場合、</p>
+<pre><code>もし、テストの点数が90点以上なら・・・
+    評価: AA
+そうでなく、もしテストの点数が80点以上なら・・・
+    評価: A
+そうでなく、もしテストの点数が70点以上なら・・・
+    評価: B
+そうでなく、もしテストの点数が60点以上なら・・・
+    評価: C
+そうでなければ・・・
+    評価: F</code></pre>
+<p>と表すことができる。</p>
+<p>このような条件分岐をPythonで実行する場合、<code>if-elif</code>文という構文を使用する。</p>
+<p><code>if-elif</code>文の書き方は以下の通りである。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (score <span class="op">&gt;=</span> <span class="dv">90</span>):   <span class="co"># もしテストの点数が90点以上なら・・・</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"評価: AA"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (score <span class="op">&gt;=</span> <span class="dv">80</span>): <span class="co"># そうでなく、もしテストの点数が80点以上なら・・・</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"評価: A"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (score <span class="op">&gt;=</span> <span class="dv">70</span>): <span class="co"># そうでなく、もしテストの点数が70点以上なら・・・</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"評価: B"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> (score <span class="op">&gt;=</span> <span class="dv">60</span>): <span class="co"># そうでなく、もしテストの点数が60点以上なら・・・</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"評価: C"</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"評価: F"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>なお、<code>elif</code>とは<code>else if</code>の略称である。 よって「そうでなく、もし〇〇なら」と解釈する。</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
